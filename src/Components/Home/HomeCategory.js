@@ -7,11 +7,12 @@ import cat2 from "../../Assets/cat2.png";
 import laptop from "../../Assets/laptop.png";
 import sale from "../../Assets/sale.png";
 import pic from "../../Assets/pic.png";
+import AllCategoriesPage from "../../Pages/Category/AllCategoriesPage";
 
 const HomeCategory = () => {
   return (
     <Container>
-      <Subtitle title="Categories" btntitle="more" />
+      <Subtitle title="Categories" btntitle="more" linkTo="/allcategories" />
       <Row className="my-4 d-flex justify-content-between">
         <CategoryCard
           title="Home Appliance"

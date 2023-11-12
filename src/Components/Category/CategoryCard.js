@@ -10,9 +10,9 @@ const CategoryCard = ({ background, img, title }) => {
       lg="2"
       className="my-4 d-flex justify-content-around "
     >
-      <div className="allCard mb-3 ">
+      <div className="allCard mb-5 ">
         <div
-          className="categoty-card "
+          className="categoty-card"
           style={{ backgroundColor: `${background}` }}
         ></div>{" "}
         <img alt="zcv" src={img} className="categoty-card-img" />
