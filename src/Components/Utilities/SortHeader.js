@@ -5,7 +5,7 @@ const SortHeader = ({ title }) => {
   const handler = () => {};
   return (
     <div className="d-flex justify-content-between pt-3 px-2">
-      <div className="sub-tile">{title}</div>
+      <div className="sub-title">{title}</div>
       <div className="search-count-text d-flex ">
         <UnopDropdown
           onAppear={handler}

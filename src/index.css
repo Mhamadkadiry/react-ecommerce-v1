@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Montserrat;
+  font-family: Poppins;
 }
 .m-0 {
   margin: 0;
@@ -9,7 +9,7 @@ body {
   padding: 0;
 }
 .font {
-  font-family: Montserrat;
+  font-family: Poppins;
   background-color: #f9f9f9;
 }
 .hieght-search {
@@ -28,11 +28,11 @@ body {
   font-size: 12px;
   font-weight: bold;
 }
-.sub-tile {
+.sub-title {
   color: #272727;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 21px;
-  font-weight: bold;
+  font-weight: 500;
   letter-spacing: 0;
   line-height: 28px;
 }
@@ -59,7 +59,7 @@ body {
 }
 .slider-title {
   color: #915970;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 24px;
   letter-spacing: 0;
   line-height: 32px;
@@ -67,7 +67,7 @@ body {
 }
 .slider-text {
   color: #915970;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 30px;
   font-weight: 800;
   letter-spacing: 0;
@@ -78,6 +78,10 @@ body {
   position: relative;
   height: 130px;
   width: 130px;
+}
+.category-home-subtitle{
+  padding: 20px;
+  margin-top: 10px;
 }
 .categoty-card {
   height: 140px;
@@ -99,7 +103,7 @@ body {
 }
 .categoty-card-text {
   color: #555550;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
@@ -109,33 +113,33 @@ body {
 
 .card-title {
   color: #555550;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 20px;
   text-align: left;
-  font-weight: 500;
+  font-weight: 600;
 
 }
 .card-price {
   color: #272727;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 21px;
-  font-weight: bold;
   letter-spacing: 0;
   line-height: 28px;
 }
 .card-currency {
-  color: #555550;
-  font-family: Montserrat;
+  color: #636362;
+  font-family: Poppins;
   font-size: 18px;
   letter-spacing: 0;
+  font-weight: bold;
   line-height: 24px;
 }
 .card-rate {
   color: #ffc107;
-  font-family: Montserrat;
-  font-size: 14px;
+  font-family: Poppins;
+  font-size: 16px;
   font-weight: bold;
   letter-spacing: 0;
   line-height: 19px;
@@ -168,7 +172,7 @@ body {
 }
 .discount-title {
   color: #ffffff;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 21px;
   font-weight: bold;
   letter-spacing: 0;
@@ -190,7 +194,7 @@ body {
 }
 .footer-shroot {
   color: #979797;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 13px;
   font-weight: bold;
   letter-spacing: 0;
@@ -200,7 +204,7 @@ body {
 
 .footer-phone {
   color: #979797;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 13px;
   font-weight: bold;
   text-align: right;
@@ -211,7 +215,7 @@ body {
 /* card filter style */
 .search-count-text {
   color: #979797;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0;
@@ -249,24 +253,30 @@ body {
 .cat-text {
   color: #979797;
   font-family: Montserrat;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   letter-spacing: 0;
-  line-height: 23px;
-  text-align: right;
+  line-height: 23px;  
+}
+.product-description-text {
+  color: #000;
+  font-family: Poppins;
+  font-size: 16px;
+  letter-spacing: 0;
+  font-weight: 500;
+  line-height: 25px;
 }
 
 .cat-title {
   color: #555550;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 14px;
   font-weight: normal;
-  text-align: right;
 }
 
 .cat-rate {
   color: #ffc107;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 14px;
   font-weight: bold;
   letter-spacing: 0;
@@ -276,13 +286,15 @@ body {
 
 .barnd-text {
   color: #555550;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 18px;
   font-weight: bold;
   letter-spacing: 0;
   line-height: 24px;
 }
-
+.brand-badge{
+  text-decoration: none;
+}
 .color {
   cursor: pointer;
   height: 30px;
@@ -291,12 +303,11 @@ body {
 }
 .product-description {
   color: #555550;
-  font-family:Montserrat;
-  font-size: 14px;
-  font-weight: 600;
+  font-family:Poppins;
+  font-size: 15px;
+  font-weight: 400;
   letter-spacing: 0;
   line-height: 26px;
-  text-align: right;
 }
 .product-price {
   height: 46px;
@@ -306,11 +317,12 @@ body {
   padding-bottom: 10px;
   border-radius: 9px;
   color: #555550;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 12px;
   font-weight: bold;
   background-color: #ffffff;
 }
+.product-title-price{margin-top:10px;margin-bottom:0;color:black}
 
 .product-cart-add {
   cursor: pointer;
@@ -320,7 +332,7 @@ body {
   border: none;
   background-color: #272727;
   color: #ffffff;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 14px;
   font-weight: normal;
 }
@@ -357,18 +369,18 @@ body {
 }
 
 .cat-text-header {
-  color: #979797;
+  color: rgb(56, 56, 59);
   font-family: Montserrat;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 600;  
   letter-spacing: 0;
   line-height: 23px;
-  padding-top: 10px;
+  padding-top: 8px;
   margin-left: 17px;
   cursor: pointer;
 }
 .cat-text-header:hover {
-  color: #555550;
+  color: #000000;
 }
 
 /* end categoery header */
@@ -384,7 +396,7 @@ body {
 }
 .title-login {
   color: #555550;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 21px;
   font-weight: 800;
   letter-spacing: 0;
@@ -408,7 +420,7 @@ body {
 /* cart page */
 .cart-title {
   color: #555550;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 21px;
   font-weight: 800;
   letter-spacing: 0;
@@ -426,7 +438,7 @@ body {
   height: 46px;
   width: 90%;
   border: 1px solid #979797;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 12px;
   font-weight: normal;
 }
@@ -442,7 +454,7 @@ body {
   border-radius: 0 !important;
   background-color: #272727;
   color: #ffff !important;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 12px;
   font-weight: normal;
 }
@@ -466,7 +478,7 @@ body {
 
 .admin-side-text {
   color: #272727;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 12px;
   font-weight: bold;
   letter-spacing: 0;
@@ -484,7 +496,7 @@ body {
 }
 .admin-content-text {
   color: #555550;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 21px;
   font-weight: 800;
   letter-spacing: 0;
@@ -493,7 +505,7 @@ body {
 }
 .item-delete-edit {
   color: #979797;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 30px;
@@ -503,7 +515,7 @@ body {
 
 .text-form {
   color: #979797;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 20px;
@@ -556,6 +568,8 @@ body {
 /* rates  */
 
 .rate-container {
+  padding: 10px;
+  margin-top: 20px;
   height: 100%;
   width: 100%;
   padding-bottom: 12px;
@@ -565,23 +579,24 @@ body {
 }
 .rate-count {
   color: #979797;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 12px;
   letter-spacing: 0;
   line-height: 23px;
 }
 .rate-name {
-  color: #555550;
-  font-family: Montserrat;
+  color: #181817;
+  font-family: Poppins;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 500;
   letter-spacing: 0;
   line-height: 19px;
 }
 .rate-description {
-  color: #555550;
-  font-family: Montserrat;
-  font-size: 14px;
+  color: #61615c;
+  font-family: Poppins;
+  font-size: 13px;
+  font-weight: 400;
   letter-spacing: 0;
   line-height: 19px;
   text-align: right;
@@ -598,14 +613,14 @@ body {
 }
 .order-title {
   color: #272727;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 16px;
   font-weight: bold;
 }
 
 .stat {
   color: #979797;
-  font-family:Montserrat;
+  font-family:Poppins;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 30px;
@@ -647,7 +662,7 @@ body {
 /* filter side style */
 .filter-title {
   color: #555550;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 16px;
   font-weight: bold;
   letter-spacing: 0;
@@ -656,7 +671,7 @@ body {
 }
 .filter-sub {
   color: #555550;
-  font-family: Montserrat;
+  font-family: Poppins;
   font-size: 12px;
   margin-left: 4px;
   letter-spacing: 0;

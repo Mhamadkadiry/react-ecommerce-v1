@@ -11,7 +11,7 @@ import AllCategoriesPage from "../../Pages/Category/AllCategoriesPage";
 
 const HomeCategory = () => {
   return (
-    <Container>
+    <Container className="category-home-subtitle">
       <Subtitle title="Categories" btntitle="more" linkTo="/allcategories" />
       <Row className="my-4 d-flex justify-content-between">
         <CategoryCard
