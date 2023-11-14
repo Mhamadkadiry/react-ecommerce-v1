@@ -251,7 +251,7 @@ body {
 }
 
 .cat-text {
-  color: #979797;
+  color: #161212;
   font-family: Montserrat;
   font-size: 14px;
   font-weight: bold;
@@ -419,13 +419,12 @@ body {
 
 /* cart page */
 .cart-title {
-  color: #555550;
+  color: #333331;
   font-family: Poppins;
-  font-size: 21px;
-  font-weight: 800;
+  font-size: 22px;
+  font-weight: 600;
   letter-spacing: 0;
   line-height: 28px;
-  text-align: right;
 }
 .cart-item-body {
   height: 229px;
