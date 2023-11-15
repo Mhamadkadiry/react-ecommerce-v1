@@ -10,6 +10,9 @@ import ExploreProductsPage from "./Pages/Product/ExploreProductsPage";
 import ProductDetailsPage from "./Pages/Product/ProductDetailsPage";
 import CartPage from "./Pages/Cart/CartPage";
 import PaymentMethodPage from "./Pages/Checkout/PaymentMethodPage";
+import AdminAllProductsPage from "./Pages/Admin/AdminAllProductsPage";
+import AdminAllOrdersPage from "./Pages/Admin/AdminAllOrdersPage";
+import AdminOrderDetailsPage from "./Pages/Admin/AdminOrderDetailsPage";
 function App() {
   return (
     <div className="font">
@@ -25,6 +28,9 @@ function App() {
           <Route path="/products/:id" element={<ProductDetailsPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/order/paymethod" element={<PaymentMethodPage />} />
+          <Route path="/admin/allproducts" element={<AdminAllProductsPage />} />
+          <Route path="/admin/allorders" element={<AdminAllOrdersPage />} />
+          <Route path="/admin/orders/:id" element={<AdminOrderDetailsPage />} />
         </Routes>
       </BrowserRouter>
       <Footer />
