@@ -13,6 +13,15 @@ import PaymentMethodPage from "./Pages/Checkout/PaymentMethodPage";
 import AdminAllProductsPage from "./Pages/Admin/AdminAllProductsPage";
 import AdminAllOrdersPage from "./Pages/Admin/AdminAllOrdersPage";
 import AdminOrderDetailsPage from "./Pages/Admin/AdminOrderDetailsPage";
+import AdminAllBrandsPage from "./Pages/Admin/AdminAllBrandsPage";
+import AdminAllCategoriesPage from "./Pages/Admin/AdminAllCategoriesPage";
+import AdminAllSubcategoriesPage from "./Pages/Admin/AdminAllSubcategoriesPage";
+import AdminAddProductPage from "./Pages/Admin/AdminAddProductPage";
+import UserAllOrdersPage from "./Pages/User/UserAllOrdersPage";
+import UserFavoriteProductsPage from "./Pages/User/UserFavoriteProductsPage";
+import UserAllAddressesPage from "./Pages/User/UserAllAddressesPage";
+import UserAddAddressPage from "./Pages/User/UserAddAddressPage";
+import UserEditAddressPage from "./Pages/User/UserEditAddressPage";
 function App() {
   return (
     <div className="font">
@@ -31,6 +40,24 @@ function App() {
           <Route path="/admin/allproducts" element={<AdminAllProductsPage />} />
           <Route path="/admin/allorders" element={<AdminAllOrdersPage />} />
           <Route path="/admin/orders/:id" element={<AdminOrderDetailsPage />} />
+          <Route path="/admin/allbrands" element={<AdminAllBrandsPage />} />
+          <Route
+            path="/admin/allcategories"
+            element={<AdminAllCategoriesPage />}
+          />
+          <Route
+            path="/admin/allsubcategories"
+            element={<AdminAllSubcategoriesPage />}
+          />
+          <Route path="/admin/addproduct" element={<AdminAddProductPage />} />
+          <Route path="/user/allorders" element={<UserAllOrdersPage />} />
+          <Route
+            path="/user/favoriteproducts"
+            element={<UserFavoriteProductsPage />}
+          />
+          <Route path="/user/addresses" element={<UserAllAddressesPage />} />
+          <Route path="/user/add-address" element={<UserAddAddressPage />} />
+          <Route path="/user/edit-address" element={<UserEditAddressPage />} />
         </Routes>
       </BrowserRouter>
       <Footer />

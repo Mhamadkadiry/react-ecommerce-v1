@@ -1,10 +1,9 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import AdminSideBar from "../../Components/Admin/AdminSideBar";
-import AdminAllOrders from "../../Components/Admin/AdminAllOrders";
-import Pagination from "../../Components/Utilities/Pagination";
+import AdminAddCategory from "../../Components/Admin/AdminAddCategory";
 
-const AdminAllOrdersPage = () => {
+const AdminAllCategoriesPage = () => {
   return (
     <Container className="py-md-3">
       <Row className="py-md-3">
@@ -12,12 +11,11 @@ const AdminAllOrdersPage = () => {
           <AdminSideBar />
         </Col>
         <Col sm="12" xs="12" md="10">
-          <AdminAllOrders />
-          <Pagination />
+          <AdminAddCategory />
         </Col>
       </Row>
     </Container>
   );
 };
 
-export default AdminAllOrdersPage;
+export default AdminAllCategoriesPage;

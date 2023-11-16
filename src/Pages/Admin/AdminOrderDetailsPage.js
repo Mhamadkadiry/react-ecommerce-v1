@@ -5,12 +5,12 @@ import AdminSideBar from "../../Components/Admin/AdminSideBar";
 
 const AdminOrderDetailsPage = () => {
   return (
-    <Container className="py-3">
-      <Row className="py-3">
-        <Col sm="3" xs="2" md="2">
+    <Container className="py-md-3">
+      <Row className="py-md-3">
+        <Col sm="12" xs="12" md="2">
           <AdminSideBar />
         </Col>
-        <Col sm="9" xs="10" md="10">
+        <Col sm="12" xs="12" md="10">
           <AdminOrderDetails />
         </Col>
       </Row>

@@ -15,16 +15,26 @@ const AdminSideBar = () => {
             PRODUCTS
           </div>
         </Link>
-
-        <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
-          BRANDS
-        </div>
-        <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
-          CATEGORIES
-        </div>
-        <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
-          SUBCATEGORIES
-        </div>
+        <Link to="/admin/allbrands" style={{ textDecoration: "none" }}>
+          <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
+            BRANDS
+          </div>
+        </Link>
+        <Link to="/admin/allcategories" style={{ textDecoration: "none" }}>
+          <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
+            CATEGORIES
+          </div>
+        </Link>
+        <Link to="/admin/allsubcategories" style={{ textDecoration: "none" }}>
+          <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
+            SUBCATEGORIES
+          </div>
+        </Link>
+        <Link to="/admin/addproduct" style={{ textDecoration: "none" }}>
+          <div className="admin-side-text my-1 border-bottom p-2 mx-auto text-center">
+            Add Product
+          </div>
+        </Link>
       </div>
     </div>
   );

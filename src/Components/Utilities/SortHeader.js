@@ -17,7 +17,7 @@ const SortHeader = ({ title }) => {
                 height="20px"
                 className="ms-1"
                 src={sort}
-                alt="Sort Image"
+                alt="Sort"
               />
               Sort By
             </p>

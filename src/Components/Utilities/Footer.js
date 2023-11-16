@@ -22,32 +22,17 @@ const Footer = () => {
             className="d-flex justify-content-end align-items-center "
           >
             <div className="d-flex pt-3 mx-2">
-              <img width="20px" height="20px" src={phone} alt="Phone image" />
+              <img width="20px" height="20px" src={phone} alt="Phone" />
               <p className="footer-phone">+49152123232322</p>
             </div>
             <div style={{ cursor: "pointer" }}>
-              <img
-                width="20px"
-                height="20px"
-                src={facebook}
-                alt="Facebook Logo"
-              />
+              <img width="20px" height="20px" src={facebook} alt="Facebook" />
             </div>
             <div style={{ cursor: "pointer" }}>
-              <img
-                width="20px"
-                height="20px"
-                src={instagram}
-                alt="Instagram Logo"
-              />
+              <img width="20px" height="20px" src={instagram} alt="Instagram" />
             </div>
             <div style={{ cursor: "pointer" }}>
-              <img
-                width="20px"
-                height="20px"
-                src={twitter}
-                alt="Twitter Logo"
-              />
+              <img width="20px" height="20px" src={twitter} alt="Twitter" />
             </div>
           </Col>
         </Row>
