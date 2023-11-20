@@ -22,6 +22,7 @@ import UserFavoriteProductsPage from "./Pages/User/UserFavoriteProductsPage";
 import UserAllAddressesPage from "./Pages/User/UserAllAddressesPage";
 import UserAddAddressPage from "./Pages/User/UserAddAddressPage";
 import UserEditAddressPage from "./Pages/User/UserEditAddressPage";
+import UserProfilePage from "./Pages/User/UserProfilePage";
 function App() {
   return (
     <div className="font">
@@ -58,6 +59,7 @@ function App() {
           <Route path="/user/addresses" element={<UserAllAddressesPage />} />
           <Route path="/user/add-address" element={<UserAddAddressPage />} />
           <Route path="/user/edit-address" element={<UserEditAddressPage />} />
+          <Route path="/user/profile" element={<UserProfilePage />} />
         </Routes>
       </BrowserRouter>
       <Footer />
