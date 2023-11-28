@@ -675,3 +675,9 @@ body {
   line-height: 17px;
 }
 /* end filter */
+
+#upload-photo {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
