@@ -1,25 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import CategoryContainer from "../../Components/Category/CategoryContainer";
 import Pagination from "../../Components/Utilities/Pagination";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  getAllCategories,
-  getSpecificPageCategories,
-} from "../../redux/actions/categoryAction";
+import useGetAllCategoriesPage from "../../Hooks/Category/useGetAllCategoriesPage";
 
 const AllCategoriesPage = () => {
-  const productsPerPage = 12;
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllCategories(productsPerPage));
-  }, []);
-
-  const categories = useSelector((state) => state.allCategories.categories);
-  const loading = useSelector((state) => state.allCategories.loading);
-
-  const getPage = (page) => {
-    dispatch(getSpecificPageCategories(productsPerPage, page));
-  };
+  const [categories, loading, getPage] = useGetAllCategoriesPage();
   return (
     <div style={{ minHeight: "670px" }}>
       <CategoryContainer data={categories.data} loading={loading} />
