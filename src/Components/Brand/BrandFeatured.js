@@ -2,10 +2,10 @@ import React from "react";
 import { Container, Row, Spinner } from "react-bootstrap";
 import BrandCard from "./BrandCard";
 import Subtitle from "../Utilities/Subtitle";
-import useGetHomeBrands from "../../Hooks/Brand/useGetHomeBrands";
+import GetHomeBrandsHook from "../../Hooks/Brand/GetHomeBrandsHook";
 
 const BrandFeatured = ({ title, btntitle }) => {
-  const [brands, loading] = useGetHomeBrands();
+  const [brands, loading] = GetHomeBrandsHook();
   return (
     <Container>
       <Subtitle title={title} btntitle={btntitle} linkTo="/allbrands" />

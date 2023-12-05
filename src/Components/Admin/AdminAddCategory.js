@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row, Spinner } from "react-bootstrap";
 import { ToastContainer } from "react-toastify";
-import useAddCategory from "../../Hooks/Category/useAddCategory";
+import AddCategoryHook from "../../Hooks/Category/AddCategoryHook";
 
 const AdminAddCategory = () => {
   const [
@@ -12,7 +12,7 @@ const AdminAddCategory = () => {
     handleChange,
     onImageChange,
     handleSubmit,
-  ] = useAddCategory();
+  ] = AddCategoryHook();
   return (
     <div>
       <Row className="justify-content-start ">

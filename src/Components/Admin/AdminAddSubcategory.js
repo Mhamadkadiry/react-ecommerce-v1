@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Row, Col, Spinner } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../redux/actions/categoryAction";
-import notify from "../../Hooks/useNotification";
+import notify from "../../Hooks/NotificationHook";
 import { ToastContainer } from "react-toastify";
 import { createSubcategory } from "../../redux/actions/subcategoryAction";
-import useAddSubcategory from "../../Hooks/Subcategory/useAddSubcategory";
+import AddSubcategoryHook from "../../Hooks/Subcategory/AddSubcategoryHook";
 
 const AdminAddSubcategory = () => {
   const [
@@ -16,7 +16,7 @@ const AdminAddSubcategory = () => {
     handleChangeName,
     name,
     isPressed,
-  ] = useAddSubcategory();
+  ] = AddSubcategoryHook();
   return (
     <div>
       <Row className="justify-content-start ">
@@ -80,4 +80,4 @@ const AdminAddSubcategory = () => {
   );
 };
 
-export default AdminAddSubcategory;
+export default AddSubcategoryHook;

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../redux/actions/categoryAction";
 
-const useGetHomeCategories = () => {
+const GetHomeCategoriesHook = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllCategories());
@@ -21,4 +21,4 @@ const useGetHomeCategories = () => {
   return [categories, loading, colors];
 };
 
-export default useGetHomeCategories;
+export default GetHomeCategoriesHook;

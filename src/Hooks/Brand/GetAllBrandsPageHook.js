@@ -5,7 +5,7 @@ import {
   getSpecificPageBrands,
 } from "../../redux/actions/brandAction";
 
-const useGetAllBrandsPage = () => {
+const GetAllBrandsPage = () => {
   const productsPerPage = 12;
   const dispatch = useDispatch();
   useEffect(() => {
@@ -21,4 +21,4 @@ const useGetAllBrandsPage = () => {
   return [brands, loading, getPage];
 };
 
-export default useGetAllBrandsPage;
+export default GetAllBrandsPage;

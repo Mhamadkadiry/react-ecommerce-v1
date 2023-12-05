@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import avatar from "../../Assets/avatar.png";
 import { useDispatch, useSelector } from "react-redux";
 import "react-toastify/dist/ReactToastify.css";
-import notify from "../useNotification";
+import notify from "../NotificationHook";
 import { createBrand } from "../../redux/actions/brandAction";
 
-const useAddBrand = () => {
+const AddBrand = () => {
   const dispatch = useDispatch();
 
   const [img, setImg] = useState(avatar);
@@ -66,4 +66,4 @@ const useAddBrand = () => {
   ];
 };
 
-export default useAddBrand;
+export default AddBrand;

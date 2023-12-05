@@ -3,9 +3,9 @@ import avatar from "../../Assets/avatar.png";
 import { createCategory } from "../../redux/actions/categoryAction";
 import { useDispatch, useSelector } from "react-redux";
 import "react-toastify/dist/ReactToastify.css";
-import notify from "../useNotification";
+import notify from "../NotificationHook";
 
-const useAddCategory = () => {
+const AddCategoryHook = () => {
   const dispatch = useDispatch();
 
   const [img, setImg] = useState(avatar);
@@ -66,4 +66,4 @@ const useAddCategory = () => {
   ];
 };
 
-export default useAddCategory;
+export default AddCategoryHook;

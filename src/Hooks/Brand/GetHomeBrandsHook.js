@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllBrands } from "../../redux/actions/brandAction";
 
-const useGetHomeBrands = () => {
+const GetHomeBrandsHook = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllBrands());
@@ -13,4 +13,4 @@ const useGetHomeBrands = () => {
   return [brands, loading];
 };
 
-export default useGetHomeBrands;
+export default GetHomeBrandsHook;

@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col } from "react-bootstrap";
+import defaultIcon from "../../Assets/defaultIcon.png";
 
 const CategoryCard = ({ background, img, title }) => {
+  const [imageSrc, setImageSrc] = useState(img ?? defaultIcon);
+  console.log("title" + title + "image" + img);
+  const handleImageError = () => {
+    setImageSrc(defaultIcon);
+  };
   return (
     <Col
       xs="6"
@@ -15,7 +21,12 @@ const CategoryCard = ({ background, img, title }) => {
           className="categoty-card"
           style={{ backgroundColor: `${background}` }}
         ></div>{" "}
-        <img alt="zcv" src={img} className="categoty-card-img" />
+        <img
+          onError={handleImageError}
+          alt="zcv"
+          src={imageSrc}
+          className="categoty-card-img"
+        />
         <p className="categoty-card-text my-2">{title}</p>
       </div>
     </Col>

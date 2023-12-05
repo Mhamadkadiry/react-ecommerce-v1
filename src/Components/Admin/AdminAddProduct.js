@@ -5,7 +5,7 @@ import MultiImageInput from "react-multiple-image-input";
 import add from "../../Assets/add.png";
 import { CompactPicker } from "react-color";
 import { ToastContainer } from "react-toastify";
-import useAddProduct from "../../Hooks/Product/useAddProduct";
+import AddProductHook from "../../Hooks/Product/AddProductHook";
 
 const AdminAddProduct = () => {
   const [
@@ -38,7 +38,7 @@ const AdminAddProduct = () => {
     onSelect,
     onRemove,
     handleSubmit,
-  ] = useAddProduct();
+  ] = AddProductHook();
   return (
     <div>
       <Row className="justify-content-start ">

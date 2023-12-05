@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Spinner } from "react-bootstrap";
 import { ToastContainer } from "react-toastify";
-import useAddBrand from "../../Hooks/Brand/useAddBrand";
+import AddBrandHook from "../../Hooks/Brand/AddBrandHook";
 
 const AdminAddBrand = () => {
   const [
@@ -12,7 +12,7 @@ const AdminAddBrand = () => {
     handleChange,
     onImageChange,
     handleSubmit,
-  ] = useAddBrand();
+  ] = AddBrandHook();
   return (
     <div>
       <Row className="justify-content-start ">

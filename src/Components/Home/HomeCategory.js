@@ -2,10 +2,11 @@ import React, { useEffect } from "react";
 import { Container, Row, Spinner } from "react-bootstrap";
 import Subtitle from "../Utilities/Subtitle";
 import CategoryCard from "../Category/CategoryCard";
-import useGetHomeCategories from "../../Hooks/Category/useGetHomeCategories";
+import GetHomeCategoriesHook from "../../Hooks/Category/GetHomeCategoriesHook";
 
 const HomeCategory = () => {
-  const [categories, loading, colors] = useGetHomeCategories();
+  const [categories, loading, colors] = GetHomeCategoriesHook();
+
   return (
     <Container className="category-home-subtitle">
       <Subtitle title="Categories" btntitle="more" linkTo="/allcategories" />

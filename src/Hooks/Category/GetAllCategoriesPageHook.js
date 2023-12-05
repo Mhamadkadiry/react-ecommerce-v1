@@ -5,7 +5,7 @@ import {
 } from "../../redux/actions/categoryAction";
 import { useDispatch, useSelector } from "react-redux";
 
-const useGetAllCategoriesPage = () => {
+const GetAllCategoriesPageHook = () => {
   const productsPerPage = 12;
   const dispatch = useDispatch();
   useEffect(() => {
@@ -21,4 +21,4 @@ const useGetAllCategoriesPage = () => {
   return [categories, loading, getPage];
 };
 
-export default useGetAllCategoriesPage;
+export default GetAllCategoriesPageHook;

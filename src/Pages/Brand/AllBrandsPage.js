@@ -1,10 +1,10 @@
 import React from "react";
 import Pagination from "../../Components/Utilities/Pagination";
 import BrandContainer from "../../Components/Brand/BrandContainer";
-import useGetAllBrandsPage from "../../Hooks/Brand/useGetAllBrandsPage";
+import GetAllBrandsPageHook from "../../Hooks/Brand/GetAllBrandsPageHook";
 
 const AllBrandsPage = () => {
-  const [brands, loading, getPage] = useGetAllBrandsPage();
+  const [brands, loading, getPage] = GetAllBrandsPageHook();
   return (
     <div style={{ minHeight: "670px" }}>
       <BrandContainer data={brands.data} loading={loading} />

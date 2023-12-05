@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCategories } from "../../redux/actions/categoryAction";
-import notify from "../useNotification";
+import notify from "../NotificationHook";
 import { createSubcategory } from "../../redux/actions/subcategoryAction";
 import { redirect } from "react-router-dom";
 
-const useAddSubcategory = () => {
+const AddSubcategoryHook = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     if (!navigator.onLine) {
@@ -79,4 +79,4 @@ const useAddSubcategory = () => {
   ];
 };
 
-export default useAddSubcategory;
+export default AddSubcategoryHook;

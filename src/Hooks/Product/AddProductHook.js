@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import notify from "../useNotification";
+import notify from "../NotificationHook";
 import { getAllCategories } from "../../redux/actions/categoryAction";
 import { getAllBrands } from "../../redux/actions/brandAction";
 import { getSubcategoriesOfOneCategory } from "../../redux/actions/subcategoryAction";
 import { createProduct } from "../../redux/actions/productAction";
 
-const useAddProduct = () => {
+const AddProductHook = () => {
   const dispatch = useDispatch();
   const [images, setImages] = useState([]);
   const [title, setTitle] = useState("");
@@ -231,4 +231,4 @@ const useAddProduct = () => {
   ];
 };
 
-export default useAddProduct;
+export default AddProductHook;

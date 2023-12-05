@@ -1,10 +1,10 @@
 import React from "react";
 import CategoryContainer from "../../Components/Category/CategoryContainer";
 import Pagination from "../../Components/Utilities/Pagination";
-import useGetAllCategoriesPage from "../../Hooks/Category/useGetAllCategoriesPage";
+import GetAllCategoriesPageHook from "../../Hooks/Category/GetAllCategoriesPageHook";
 
 const AllCategoriesPage = () => {
-  const [categories, loading, getPage] = useGetAllCategoriesPage();
+  const [categories, loading, getPage] = GetAllCategoriesPageHook();
   return (
     <div style={{ minHeight: "670px" }}>
       <CategoryContainer data={categories.data} loading={loading} />

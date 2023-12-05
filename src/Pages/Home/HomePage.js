@@ -4,8 +4,10 @@ import HomeCategory from "../../Components/Home/HomeCategory";
 import ProductContainer from "../../Components/Product/ProductContainer";
 import DiscountSection from "../../Components/Home/DiscountSection";
 import BrandFeatured from "../../Components/Brand/BrandFeatured";
+import GetHomeProductsHook from "../../Hooks/Product/GetHomeProductsHook";
 
 const HomePage = () => {
+  const productItems = GetHomeProductsHook();
   return (
     <div className="font" style={{ minHeight: "670px" }}>
       <Slider />
@@ -16,13 +18,19 @@ const HomePage = () => {
         linkTo="/products"
       />
       <DiscountSection />
-      <ProductContainer title="Newest" btntitle="more" linkTo="/products" />
       <ProductContainer
-        title="Best selling"
+        products={productItems}
+        title="Newest"
         btntitle="more"
         linkTo="/products"
       />
       <BrandFeatured title="Brands" btntitle="more" />
+      <ProductContainer
+        products={productItems}
+        title="Best selling"
+        btntitle="more"
+        linkTo="/products"
+      />
     </div>
   );
 };
