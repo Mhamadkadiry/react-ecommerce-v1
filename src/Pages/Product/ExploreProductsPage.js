@@ -15,11 +15,11 @@ const ExploreProductsPage = () => {
       <Container>
         <SortHeader title={`${productItems.length} Products found`} />
         <Row className="d-flex flex-row">
-          <Col sm="10" xs="10" md="11">
-            <ProductContainer products={productItems} title="" btntitle="" />
-          </Col>
-          <Col sm="2" xs="2" md="1" className="d-flex">
+          <Col sm="12" xs="2" md="1" className="d-flex">
             <SideFilter />
+          </Col>
+          <Col sm="12" xs="12" md="11">
+            <ProductContainer products={productItems} title="" btntitle="" />
           </Col>
         </Row>
         <Pagination />

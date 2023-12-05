@@ -1,60 +1,73 @@
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 
-const ProductDescription = () => {
+const ProductDescription = ({ product, brand }) => {
   return (
     <div>
       <Row className="mt-2">
         <Col md="8">
           <div className="cat-title d-inline">
-            <h4>
-              Samsung Galaxy S4 I337 16GB 4G LTE Unlocked GSM Android Cell Phone
-            </h4>{" "}
+            <h4>{product.title}</h4>{" "}
           </div>
         </Col>
       </Row>
-      <Row>
-        <Col md="8">
-          <h6 style={{ color: "#337ab7" }}>
-            Product of{" "}
-            <a className="brand-badge badge bg-info text-dark" href="#">
-              Samsung
-            </a>{" "}
-          </h6>
-        </Col>
-      </Row>
+      {brand ? (
+        <Row>
+          <Col md="8">
+            <h6>
+              <a className="brand-badge badge bg-info text-dark" href="#">
+                {brand.name}
+              </a>{" "}
+            </h6>
+          </Col>
+        </Row>
+      ) : null}
       <Row>
         <Col md="8" className="mt-1">
           <h6 class="product-title-price">
             <small>PRICED at</small>
           </h6>
-          <h3>EUR 399</h3>
+          {product.price ? (
+            <div className="d-flex">
+              <h3 className="text-muted">
+                <del>EUR {product.price}</del>
+              </h3>
+              <h3 className="ms-2">EUR {product.priceAfterDiscount}</h3>
+            </div>
+          ) : (
+            <h3>EUR 399</h3>
+          )}
         </Col>
       </Row>
       <Row>
         <Col md="8" className="mt-1">
           <div className="product-description-text d-inline">
-            Available Quantity: 52{" "}
+            Available Quantity: {product.quantity}
           </div>
-          <div className="d-flex">
-            <div className="product-description-text">Colors:</div>
-          </div>
-          <div className="d-flex p-2">
-            <div
-              className="color mx-1"
-              style={{
-                backgroundColor: "red",
-                border: "3px solid red",
-              }}
-            ></div>
-            <div
-              className="color mx-1"
-              style={{
-                backgroundColor: "green",
-                border: "3px solid green",
-              }}
-            ></div>
-          </div>
+          {product.colors ? (
+            product.colors.length > 0 ? (
+              <>
+                <div className="d-flex">
+                  <div className="product-description-text">Colors:</div>
+                </div>
+
+                <div className="d-flex p-2">
+                  {product.colors.map((color, index) => {
+                    return (
+                      <div
+                        key={index}
+                        className="color mx-1"
+                        style={{
+                          backgroundColor: color,
+                          border: `3px solid ${color}`,
+                        }}
+                      ></div>
+                    );
+                  })}
+                </div>
+              </>
+            ) : null
+          ) : null}
         </Col>
       </Row>
       <Row className="mt-2">
@@ -63,13 +76,7 @@ const ProductDescription = () => {
       <Row className="mt-2">
         <Col md="10">
           <div className="product-description d-inline">
-            Apple today announced iPhone 14 Pro and iPhone 14 Pro Max, the most
-            advanced Pro lineup ever, featuring the Dynamic Island — a new
-            design that introduces an intuitive way to experience iPhone — and
-            the Always-On display. Powered by A16 Bionic, the fastest chip ever
-            in a smartphone, iPhone 14 Pro introduces a new class of pro camera
-            system, with the first-ever 48MP Main camera on iPhone featuring a
-            quad-pixel sensor.
+            {product.description}
           </div>
         </Col>
       </Row>

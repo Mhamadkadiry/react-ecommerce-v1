@@ -5,7 +5,7 @@ import ProductCard from "./ProductCard";
 
 const ProductContainer = ({ title, btntitle, linkTo, products }) => {
   return (
-    <Container>
+    <Container className="p-lg-4">
       {products ? (
         <Subtitle title={title} btntitle={btntitle} linkTo={`${linkTo}`} />
       ) : null}

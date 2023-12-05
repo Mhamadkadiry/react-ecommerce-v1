@@ -1,6 +1,11 @@
 import useGetData from "../../AxiosHooks/useGetData";
 import { useInsertDataWithImage } from "../../AxiosHooks/useInsertData";
-import { CREATE_BRAND, GET_ALL_BRANDS, GET_ERROR } from "../types";
+import {
+  CREATE_BRAND,
+  GET_ALL_BRANDS,
+  GET_ERROR,
+  GET_ONE_BRAND,
+} from "../types";
 
 export const getAllBrands = (limit) => async (dispatch) => {
   try {
@@ -41,6 +46,21 @@ export const createBrand = (formData) => async (dispatch) => {
       type: CREATE_BRAND,
       payload: response,
       loading: true,
+    });
+  } catch (e) {
+    dispatch({
+      type: GET_ERROR,
+      payload: "Error " + e,
+    });
+  }
+};
+
+export const getOneBrand = (id) => async (dispatch) => {
+  try {
+    const response = await useGetData(`/api/v1/brands/${id}`);
+    dispatch({
+      type: GET_ONE_BRAND,
+      payload: response,
     });
   } catch (e) {
     dispatch({

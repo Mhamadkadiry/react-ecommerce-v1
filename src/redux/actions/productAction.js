@@ -5,6 +5,8 @@ import {
   GET_ALL_PRODUCTS,
   GET_ERROR,
   GET_PRODUCT_DETAILS,
+  GET_PRODUCT_REVIEWS,
+  GET_SIMILAR_PRODUCTS,
 } from "../types";
 
 export const createProduct = (formatData) => async (dispatch) => {
@@ -49,6 +51,38 @@ export const getOneProduct = (id) => async (dispatch) => {
     const response = await useGetData(`/api/v1/products/${id}`);
     dispatch({
       type: GET_PRODUCT_DETAILS,
+      payload: response,
+      loading: true,
+    });
+  } catch (e) {
+    dispatch({
+      type: GET_ERROR,
+      payload: "Error " + e,
+    });
+  }
+};
+
+export const getSimilarProducts = (id) => async (dispatch) => {
+  try {
+    const response = await useGetData(`/api/v1/products?category=${id}`);
+    dispatch({
+      type: GET_SIMILAR_PRODUCTS,
+      payload: response,
+      loading: true,
+    });
+  } catch (e) {
+    dispatch({
+      type: GET_ERROR,
+      payload: "Error " + e,
+    });
+  }
+};
+
+export const getProductReviews = (id) => async (dispatch) => {
+  try {
+    const response = await useGetData(`/api/v1/products/${id}/reviews`);
+    dispatch({
+      type: GET_PRODUCT_REVIEWS,
       payload: response,
       loading: true,
     });

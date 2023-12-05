@@ -4,7 +4,6 @@ import defaultIcon from "../../Assets/defaultIcon.png";
 
 const CategoryCard = ({ background, img, title }) => {
   const [imageSrc, setImageSrc] = useState(img ?? defaultIcon);
-  console.log("title" + title + "image" + img);
   const handleImageError = () => {
     setImageSrc(defaultIcon);
   };
