@@ -1,10 +1,5 @@
-import React, { useEffect, useState } from "react";
 import { Row, Col, Spinner } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllCategories } from "../../redux/actions/categoryAction";
-import notify from "../../Hooks/NotificationHook";
 import { ToastContainer } from "react-toastify";
-import { createSubcategory } from "../../redux/actions/subcategoryAction";
 import AddSubcategoryHook from "../../Hooks/Subcategory/AddSubcategoryHook";
 
 const AdminAddSubcategory = () => {
@@ -80,4 +75,4 @@ const AdminAddSubcategory = () => {
   );
 };
 
-export default AddSubcategoryHook;
+export default AdminAddSubcategory;

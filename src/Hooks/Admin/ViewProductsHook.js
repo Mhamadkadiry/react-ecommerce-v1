@@ -5,8 +5,8 @@ import {
   getAllProductsPage,
 } from "../../redux/actions/productAction";
 
-const GetAllProductHook = () => {
-  const limit = 5;
+const ViewProductsHook = () => {
+  const limit = 6;
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getAllProducts(limit));
@@ -26,4 +26,4 @@ const GetAllProductHook = () => {
   return [productItems, pagination, onPress];
 };
 
-export default GetAllProductHook;
+export default ViewProductsHook;

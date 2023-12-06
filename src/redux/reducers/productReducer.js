@@ -1,5 +1,6 @@
 import {
   CREATE_PRODUCT,
+  DELETE_PRODUCT,
   GET_ALL_PRODUCTS,
   GET_ERROR,
   GET_PRODUCT_DETAILS,
@@ -13,6 +14,7 @@ const inital = {
   specificProduct: [],
   similarProducts: [],
   productReviews: [],
+  deleteResponse: [],
   loading: true,
 };
 const productReducer = (state = inital, action) => {
@@ -45,6 +47,12 @@ const productReducer = (state = inital, action) => {
       return {
         ...state,
         productReviews: action.payload,
+        loading: false,
+      };
+    case DELETE_PRODUCT:
+      return {
+        ...state,
+        deleteResponse: action.payload,
         loading: false,
       };
     case GET_ERROR:

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import Subtitle from "../Utilities/Subtitle";
 import ProductCard from "./ProductCard";
 

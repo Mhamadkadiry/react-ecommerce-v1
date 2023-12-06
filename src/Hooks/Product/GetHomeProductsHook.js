@@ -5,7 +5,7 @@ import { getAllProducts } from "../../redux/actions/productAction";
 const GetHomeProductsHook = () => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getAllProducts("-sold", 4));
+    dispatch(getAllProducts(4, "-sold"));
   }, []);
   const allProducts = useSelector((state) => state.allProducts.allProducts);
   let productItems = [];

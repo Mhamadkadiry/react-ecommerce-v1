@@ -4,50 +4,22 @@ import defaultImage from "../../Assets/defaultImage.jpeg";
 import favoff from "../../Assets/fav-off.png";
 import rate from "../../Assets/rate.png";
 import { Link } from "react-router-dom";
+import GenerateStarsHook from "../../Hooks/GenerateStarsHook";
 const ProductCard = ({ item }) => {
   const [imageSrc, setImageSrc] = useState(item.imageCover);
 
   const handleImageError = () => {
     setImageSrc(defaultImage);
   };
-  const generateStars = (ratingAverage) => {
-    const stars = [];
-    const fullStars = Math.floor(ratingAverage);
-    const hasHalfStar = ratingAverage % 1 !== 0;
-
-    for (let i = 0; i < fullStars; i++) {
-      stars.push(
-        <i key={i} className="star fas fa-star text-warning mr-1"></i>
-      );
-    }
-
-    if (hasHalfStar) {
-      stars.push(
-        <i
-          key={1 + stars.length}
-          className="star fa-regular fa-star-half-stroke text-warning mr-1"
-        ></i>
-      );
-    }
-
-    const emptyStars = 5 - stars.length;
-    for (let i = 0; i < emptyStars; i++) {
-      stars.push(
-        <i
-          key={`empty-${i}`}
-          className="star far fa-star text-warning mr-1"
-        ></i>
-      );
-    }
-
-    return stars;
-  };
+  const stars = GenerateStarsHook(item.ratingsAverage);
   return (
     <Col xs="12" sm="6" md="4" lg="3" className="d-flex">
       <Card
         border="light"
         className="mt-3"
-        style={{ boxShadow: "0 2px 2px 0 rgba(151,151,151,0.5)" }}
+        style={{
+          boxShadow: "0 2px 2px 0 rgba(151,151,151,0.5)",
+        }}
       >
         <Link to={`/products/${item._id}`}>
           <Card.Img
@@ -59,7 +31,7 @@ const ProductCard = ({ item }) => {
           />
         </Link>
         <Card.Footer
-          style={{ cursor: "default" }}
+          style={{ cursor: "default", minHeight: "230px" }}
           border="light"
           className="border-top border-light p-4"
         >
@@ -72,7 +44,7 @@ const ProductCard = ({ item }) => {
           <div className="d-flex align-items-center justify-content-between mt-3">
             <div className="d-flex">
               {item.ratingsAverage ? (
-                generateStars(item.ratingsAverage)
+                stars
               ) : (
                 <>
                   <i className="star fa-regular fa-star text-warning"></i>

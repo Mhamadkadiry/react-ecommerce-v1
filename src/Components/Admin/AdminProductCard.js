@@ -1,53 +1,132 @@
-import React from "react";
-import { Col, Card, Row, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Col, Card, Row, Button, Badge, Modal } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import prod1 from "../../Assets/prod1.png";
+import defaultImage from "../../Assets/defaultImage.jpeg";
+import GenerateStarsHook from "../../Hooks/GenerateStarsHook";
+import { deleteProduct } from "../../redux/actions/productAction";
+import { useDispatch } from "react-redux";
 const AdminProductCard = ({ item }) => {
+  const [imageSrc, setImageSrc] = useState(item.imageCover);
+  const dispatch = useDispatch();
+  const [show, setShow] = useState(false);
+  const [showComponent, setShowComponent] = useState(true);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const handleDelete = async () => {
+    // await dispatch(deleteProduct(item._id));
+    handleClose();
+    setShowComponent(false);
+  };
+  const handleImageError = () => {
+    setImageSrc(defaultImage);
+  };
+  const stars = GenerateStarsHook(item.ratingsAverage);
   return (
-    <Col xs="12" sm="6" md="5" lg="4" className="d-flex">
-      <Card
-        className="my-2"
-        style={{
-          width: "100%",
-          height: "350px",
-          borderRadius: "8px",
-          border: "none",
-          padding: "2px",
-          backgroundColor: "#FFFFFF",
-        }}
-      >
-        <Row className="d-flex justify-content-center px-2">
-          <Col className=" d-flex justify-content-between">
-            <div className="d-inline item-delete-edit">Delete</div>
+    showComponent && (
+      <Col className="mt-3" xs="12" sm="6" md="4" lg="4">
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              <div className="font">Delete Product</div>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="font">
+              Are you sure do you want to delete this product?
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button className="font" variant="secondary" onClick={handleClose}>
+              Cancel
+            </Button>
+            <Button onClick={handleDelete} className="font" variant="danger">
+              Delete
+            </Button>
+          </Modal.Footer>
+        </Modal>
+        <Row className="d-flex justify-content-center  mt-2">
+          <Col className=" d-flex justify-content-between pb-1">
+            <button
+              onClick={handleShow}
+              class="d-inline btn btn-danger btn-sm rounded-1"
+              type="button"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="Delete"
+            >
+              <i class="fa fa-trash me-1"></i>Delete
+            </button>
             <Link style={{ textDecoration: "none" }} to={`/admin/editproduct/`}>
-              <div className="d-inline item-delete-edit">Edit</div>
+              <button
+                class="d-inline btn btn-success btn-sm rounded-1"
+                type="button"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Edit"
+              >
+                <i class="fa fa-edit me-1"></i>Edit
+              </button>
             </Link>
           </Col>
         </Row>
-        <Link
-          to={`/products/:id`}
-          style={{ textDecoration: "none", color: "black" }}
+        <Card
+          border="light"
+          style={{ boxShadow: "0 2px 2px 0 rgba(151,151,151,0.5)" }}
         >
-          <Card.Img style={{ height: "228px", width: "100%" }} src={prod1} />
-          <Card.Body>
-            <Card.Title>
-              <div className="card-title">
-                Iphone 14 PRO Max with ultra max screen
+          <Link to={`/products/${item._id}`}>
+            <Card.Img
+              onError={handleImageError}
+              height="200px"
+              width="100%"
+              src={imageSrc}
+              alt="product-image"
+            />
+          </Link>
+          <Card.Footer
+            style={{ cursor: "default", minHeight: "230px" }}
+            border="light"
+            className="border-top border-light p-4"
+          >
+            <a href="#" style={{ textDecoration: "none" }} className="h5">
+              {item.title}
+            </a>
+            <h6 className="font-weight-light text-gray mt-2">
+              {item.description.slice(0, 75)}...
+            </h6>
+            <div className="d-flex align-items-center justify-content-between mt-3">
+              <div className="d-flex">
+                {item.ratingsAverage ? (
+                  stars
+                ) : (
+                  <>
+                    <i className="star fa-regular fa-star text-warning"></i>
+                    <i className="star fa-regular fa-star text-warning"></i>
+                    <i className="star fa-regular fa-star text-warning"></i>
+                    <i className="star fa-regular fa-star text-warning"></i>
+                    <i className="star fa-regular fa-star text-warning"></i>
+                  </>
+                )}
+                <Badge pill variant="warning" className="ml-2 bg-warning">
+                  {item.ratingsAverage ?? 0}
+                </Badge>
               </div>
-            </Card.Title>
-            <Card.Text>
-              <div className="d-flex align-items-center justify-content-between">
-                <div className="card-rate">4.5</div>
-                <div className="d-flex">
-                  <div className="card-currency mx-1">EUR</div>
-                  <div className="card-price">1400</div>
-                </div>
+            </div>
+            <div className="d-flex justify-content-between align-items-center mt-3">
+              <div>
+                <span className="h5 mb-0 text-muted">
+                  <del>EUR {item.price}</del>
+                </span>
               </div>
-            </Card.Text>
-          </Card.Body>
-        </Link>
-      </Card>
-    </Col>
+              <div>
+                <span className="h5 mb-0 text-gray">
+                  EUR {item.priceAfterDiscount}
+                </span>
+              </div>
+            </div>
+          </Card.Footer>
+        </Card>
+      </Col>
+    )
   );
 };
 

@@ -8,7 +8,11 @@ import Pagination from "../../Components/Utilities/Pagination";
 import GetAllProductHook from "../../Hooks/Product/GetAllProductHook";
 
 const ExploreProductsPage = () => {
-  const productItems = GetAllProductHook();
+  const [productItems, pagination, onPress] = GetAllProductHook();
+  let pageCount = 0;
+  if (pagination.numberOfPages) {
+    pageCount = pagination.numberOfPages;
+  }
   return (
     <div style={{ minHeight: "680px" }}>
       <CategoryHeader />
@@ -22,7 +26,9 @@ const ExploreProductsPage = () => {
             <ProductContainer products={productItems} title="" btntitle="" />
           </Col>
         </Row>
-        <Pagination />
+        {pageCount > 1 ? (
+          <Pagination pageCount={pageCount} onPress={onPress} />
+        ) : null}
       </Container>
     </div>
   );
